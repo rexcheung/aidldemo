@@ -8,7 +8,10 @@ import android.os.Parcelable;
  */
 
 public class Book implements Parcelable {
-public String getName() {
+    private String name;
+    private int price;
+
+    public String getName() {
         return name;
     }
 
@@ -24,9 +27,8 @@ public String getName() {
         this.price = price;
     }
 
-    private String name;
-    private int price;
-    public Book(){}
+    public Book() {
+    }
 
     public Book(Parcel in) {
         name = in.readString();
@@ -58,6 +60,7 @@ public String getName() {
 
     /**
      * 参数是一个Parcel,用它来存储与传输数据
+     *
      * @param dest
      */
     public void readFromParcel(Parcel dest) {

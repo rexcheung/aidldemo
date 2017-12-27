@@ -2,7 +2,7 @@
 package com.zxbin.aidlstudy;
 
 // Declare any non-default types here with import statements
-import com.lypeer.ipcclient.Book;
+import com.zxbin.aidlstudy.Book;
 
 interface BookManager {
 
