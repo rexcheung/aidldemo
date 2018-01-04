@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.aidl.zxbin.aidlstudy.R;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -77,8 +79,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void bindAidlService() {
-        Intent intent = new Intent(this, AIDLService.class);
-        bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
+        Intent serviceIntent = new Intent()
+                .setComponent(new ComponentName(
+                        "com.zxbin.aidlstudy",
+                        "com.zxbin.aidlstudy.AIDLService"));
+        bindService(serviceIntent, mServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
     @Override

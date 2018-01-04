@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zxbin.aidlstudy">
-
-    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
+    package="com.aidl.zxbin.aidlstudy">
 
     <application
         android:allowBackup="true"
@@ -11,23 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<!--        <activity android:name=".MainActivity">
+        <activity android:name="com.zxbin.aidlstudy.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
-
-        <service
-            android:name=".AIDLService"
-            android:process=":aidl"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.zxbin.aidlstudy" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
+        </activity>
     </application>
 
 </manifest>

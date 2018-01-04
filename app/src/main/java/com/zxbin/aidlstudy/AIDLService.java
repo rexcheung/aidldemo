@@ -3,6 +3,7 @@ package com.zxbin.aidlstudy;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.os.Process;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -25,6 +26,8 @@ public class AIDLService extends Service {
         @Override
         public List<Book> getBooks() throws RemoteException {
             synchronized (this) {
+                int pid = Process.myPid();
+                Log.e("AIDLService PID", pid + "");
                 Log.e(TAG, "invoking getBooks() method , now the list is : " + mBooks.toString());
                 if (mBooks != null) {
                     return mBooks;
@@ -53,6 +56,7 @@ public class AIDLService extends Service {
                 Log.e(TAG, "invoking addBooks() method , now the list is : " + mBooks.toString());
             }
         }
+
     };
 
     @Override
